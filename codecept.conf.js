@@ -34,5 +34,6 @@ const newLocal = exports.config = {
         screenshotOnFail: {
             enabled: true
         }
-    }
+    },
+    translation: 'ru-RU'
 };

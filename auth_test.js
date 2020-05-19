@@ -1,15 +1,19 @@
-const { I } = inject();
-const auth = require('./login_and_logout.js');
+const auth = require('./auth.js');
 const cfg = require('./config.js');
 
-Feature('My First Test');
+Feature('Кейсы с некорректной авторизацией'); 
 
-Scenario('login_and_logout', (I) => {
+Scenario('auth_incorrect_login', (I) => {
     auth.login(cfg.users.random.login, cfg.users.nlk.password);
+    I.see('Неверная почта/логин или пароль.');
+});
+
+Scenario('auth_incorrect_pw', (I) => {
     auth.login(cfg.users.nlk.login, cfg.users.random.password);
+    I.see('Неверная почта/логин или пароль.');
+});
+
+Scenario('auth_login_and_pw_not_entered', (I) => {
     auth.login('', '');
-    auth.login(cfg.users.nlk.login, cfg.users.nlk.password);
-    auth.logout_nlk();
-    auth.login(cfg.users.slk.login, cfg.users.slk.password);
-    auth.logout_slk();
+    I.see('Введите имя пользователя и пароль.');
 });
