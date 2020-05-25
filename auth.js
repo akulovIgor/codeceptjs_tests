@@ -5,14 +5,19 @@ const cfg = require('./config.js');
 module.exports = {
     login: async function (login, pass) {
         I.amOnPage('/');
-        I.clearCookie();
         I.click(slr.entry);
         I.waitForElement(slr.login);
         I.fillField(slr.login, login);
         I.fillField(slr.password, pass);
+        pause();
         I.click(slr.sign_in);
-        const name = login.split('@')[0];
-        await this.check_csrf(name);
+        //if (I.seeCookie('csrftoken')) {
+        //    I.click(slr.sign_in);
+        //} else {
+        //    I.click(slr.sign_in);
+        //    I.waitForClickable(slr.sign_in, 5);
+        //    I.click(slr.sign_in);
+        //}
     },
 
     logout_nlk: function () {
