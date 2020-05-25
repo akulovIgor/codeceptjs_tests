@@ -2,11 +2,11 @@ module.exports = {
     users: {
         nlk: {
             login: 'user',
-            password: 'pas',
+            password: 'pass',
         },
         slk: {
             login: 'user',
-            password: 'pas',
+            password: 'pass',
         },
         random: {
             login: 'dewdew@ifre.ru',

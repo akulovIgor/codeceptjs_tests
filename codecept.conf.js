@@ -4,7 +4,7 @@ const newLocal = exports.config = {
     helpers: {
         WebDriver: {
             url: "https://www.reg.ru/",
-            browser: 'opera',
+            browser: 'chrome',
             host: 'ggr.int.reg.ru',
             port: 4444,
             user: 'selenoid',

@@ -9,7 +9,7 @@ module.exports = {
         I.waitForElement(slr.login);
         I.fillField(slr.login, login);
         I.fillField(slr.password, pass);
-        pause();
+        //pause();
         I.click(slr.sign_in);
         //if (I.seeCookie('csrftoken')) {
         //    I.click(slr.sign_in);
@@ -23,6 +23,7 @@ module.exports = {
     logout_nlk: function () {
         I.click(slr.click_on_login);
         I.click(slr.exit);
+        I.clearCookie();
     },
 
     logout_slk: function () {
