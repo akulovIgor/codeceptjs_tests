@@ -1,22 +1,19 @@
 const auth = require('./auth.js');
 const cfg = require('./config.js');
 
-Feature('Кейсы с некорректной авторизацией', { retries: 1 }); 
+Feature('Кейсы с некорректной авторизацией'); 
 
-Scenario('auth_incorrect_login', (I) => {
-    auth.login(cfg.users.random.login, cfg.users.nlk.password);
-    I.see('Неверная почта/логин или пароль.');
-    I.clearCookie();
+Scenario('auth_incorrect_login', async (I) => {
+    error = 'Неверная почта/логин';
+    auth.login(cfg.users.random.login, cfg.users.nlk.password, error);
 });
 
-Scenario('auth_incorrect_pw', (I) => {
-    auth.login(cfg.users.nlk.login, cfg.users.random.password);
-    I.see('Неверная почта/логин или пароль.');
-    I.clearCookie();
+Scenario('auth_incorrect_pw', async (I) => {
+    error = 'Неверная почта/логин';
+    auth.login(cfg.users.nlk.login, cfg.users.random.password, error);
 });
 
-Scenario('auth_login_and_pw_not_entered', (I) => {
-    auth.login('', '');
-    I.see('Введите имя пользователя и пароль.');
-    I.clearCookie();
+Scenario('auth_login_and_pw_not_entered', async (I) => {
+    error = 'Введите имя пользователя';
+    auth.login('', '', error);
 });

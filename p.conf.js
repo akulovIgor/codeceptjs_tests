@@ -6,6 +6,7 @@ const newLocal = exports.config = {
             url: "https://www.reg.ru/",
             show: true,
             windowSize: '1920x1680',
+            waitForNavigation: "domcontentloaded",
         }
     },
     include: {
