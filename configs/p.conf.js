@@ -1,5 +1,5 @@
 const newLocal = exports.config = {
-    tests: './*_test.js',
+    tests: '../tests/*_test.js',
     output: './output',
     helpers: {
         Puppeteer: {
@@ -10,7 +10,7 @@ const newLocal = exports.config = {
         }
     },
     include: {
-        I: './steps_file.js'
+        I: '../steps_file.js'
     },
     bootstrap: null,
     mocha: {},

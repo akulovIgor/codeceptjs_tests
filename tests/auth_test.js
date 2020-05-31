@@ -1,5 +1,6 @@
-const auth = require('./auth.js');
-const cfg = require('./config.js');
+const auth = require('../modules/auth.js');
+const cfg = require('../modules/config.js');
+
 
 Feature('Кейсы с некорректной авторизацией'); 
 

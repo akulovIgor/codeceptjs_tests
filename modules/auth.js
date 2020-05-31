@@ -1,6 +1,5 @@
 const { I } = inject();
 const slr = require('./selectors.js');
-const cfg = require('./config.js');
 
 module.exports = {
     async login(user, pw, text) {
